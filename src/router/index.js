@@ -12,7 +12,7 @@ const routes = [
     component: Layout,
     children: [
       {
-        path: "",
+        path: "product",
         name: "Product",
         component: Product,
         meta: {
@@ -34,7 +34,65 @@ const routes = [
         meta: {
           isLogin: true
         }
-      }
+      },
+      {
+        path: "",
+        name: "HomePage",
+        component: () => import("../views/HomePage"),
+        meta: {
+          isLogin: true
+        },
+      },
+      {
+        path: "detail",
+        name: "detail",
+        component: () => import("../views/HomePage/detailPage/index.vue"),
+        meta: {
+          isLogin: true
+        },
+        children:[
+          {
+            path: "devproduct",
+            name: "DevProduct",
+            component: () => import("../views/HomePage/detailPage/DevProduct.vue"),
+            meta: {
+              isLogin: true
+            },
+          },
+          {
+            path: "brandmarketing",
+            name: "BrandMarketing",
+            component: () => import("../views/HomePage/detailPage/BrandMarketing.vue"),
+            meta: {
+              isLogin: true
+            },
+          },
+          {
+            path: "mission",
+            name: "Mission",
+            component: () => import("../views/HomePage/detailPage/Mission.vue"),
+            meta: {
+              isLogin: true
+            },
+          },
+          {
+            path: "height",
+            name: "Height",
+            component: () => import("../views/HomePage/detailPage/Height.vue"),
+            meta: {
+              isLogin: true
+            },
+          },
+        ]
+      },
+      {
+        path: "/leavingmessage",
+        name: "LeavingMessage",
+        component: () => import("../views/leavingmessage"),
+        meta: {
+          isLogin: true
+        },
+      },
     ]
   },
   {

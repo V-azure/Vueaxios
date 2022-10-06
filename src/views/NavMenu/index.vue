@@ -9,9 +9,11 @@
         active-text-color="#ffd04b"
         router
     >
-        <el-menu-item index="/"><i class="el-icon-menu"></i>{{ $t("message.project") }}</el-menu-item>
+        <el-menu-item index="/"><i class="el-icon-menu"></i>{{ $t("message.homepage") }}</el-menu-item>
+        <el-menu-item index="/product"><i class="el-icon-menu"></i>{{ $t("message.project") }}</el-menu-item>
         <el-menu-item index="/params"><i class="el-icon-document"></i>{{ $t("message.params") }}</el-menu-item>
         <el-menu-item index="/content"><i class="el-icon-setting"></i>{{ $t("message.content") }}</el-menu-item>
+        <el-menu-item index="/leavingmessage"><i class="el-icon-setting"></i>{{ $t("message.leavingmessage") }}</el-menu-item>
         <div class="user">
             <router-link to="/user" tag="span" class="user-name">{{ user.username }}</router-link>
             <el-button class="logout" @click="logoutHandle">退出</el-button>
@@ -95,6 +97,7 @@ export default {
         line-height: 40px;
     }
     .logout {
+        z-index: 0;
     }
 }
 

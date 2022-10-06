@@ -13,7 +13,11 @@
             <el-table-column show-overflow-tooltip prop="sellPoint" label="商品卖点" width="300"></el-table-column>
             <el-table-column show-overflow-tooltip prop="price" label="商品价格" width="100"></el-table-column>
             <el-table-column show-overflow-tooltip prop="num" label="商品数量" width="100"></el-table-column>
-            <el-table-column show-overflow-tooltip prop="descs" label="商品描述"></el-table-column>
+            <el-table-column show-overflow-tooltip prop="descs" label="商品描述">
+                <template v-slot="scope">
+                    <div v-html="scope.row.descs"></div>
+                </template>
+            </el-table-column>
             <el-table-column label="操作" width="145">
                 <template slot-scope="scope">
                     <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>

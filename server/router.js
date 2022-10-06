@@ -53,6 +53,47 @@ router.post("/register", (req, res) => {
 })
 
 /**
+ * 留言接口
+ */
+router.post("/leavingmessage", (req, res) => {
+    const { username, message} = req.body;
+    const sql = "insert into leavingmessage values(id,?,?)";
+    const arr = [username, message];
+    sqlFn(sql, arr, (result) => {
+        if (result.affectedRows > 0) {
+            res.send({
+                msg: "留言成功",
+                status: 200,
+            })
+        } else {
+            res.send({
+                msg: "留言失败",
+                status: 500
+            })
+        }
+    })
+})
+/**
+ * 留言查询接口
+ */
+router.get("/leavingmessage", (req, res) => {
+    const sql = "select * from leavingmessage";
+    sqlFn(sql, null, (result) => {
+        if (result.length > 0) {
+            res.send({
+                status: 200,
+                result
+            })
+        } else {
+            res.send({
+                status: 401,
+                msg: "暂无数据"
+            })
+        }
+    })
+})
+
+/**
  * 商品管理 查询接口
  * 参数：page
  */

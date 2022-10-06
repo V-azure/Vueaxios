@@ -7,6 +7,7 @@ const base = {
     baseUrl:"/api",
     loginUrl:"/api/login",
     register:"/api/register",
+    leavingmessage:"api/leavingmessage",
     projectList:"/api/backend/item/selectTbItemAllByPage",
     total:"/api/total", // 商品总条数据
     categoryUrl:"/api/backend/itemCategory/selectItemCategoryByParentId", // 类目选择地址

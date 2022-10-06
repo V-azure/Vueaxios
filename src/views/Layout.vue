@@ -2,6 +2,7 @@
     <div class="home">
         <NavMenu />
         <div class="container">
+          <!-- 这里是二级视图了 -->
           <router-view></router-view>
         </div>
     </div>

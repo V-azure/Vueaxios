@@ -19,6 +19,20 @@ const api = {
         return axios.post(base.baseUrl + base.register, params)
     },
     /**
+     * 留言
+     */
+    leavingmessage(params) {
+        return axios.post(base.baseUrl + base.leavingmessage, params)
+    },
+    /**
+     * 留言请求
+     */
+    leavingmessageqq(params) {
+        return axios.get(base.baseUrl + base.leavingmessage, {
+            params
+        })
+    },
+    /**
      * 商品列表查询
      */
     projectList(params) {

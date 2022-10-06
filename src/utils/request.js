@@ -2,6 +2,8 @@ import axios from "axios"
 import qs from "querystring"
 import router from "../router"
 import store from "../store"
+import Vue from 'vue'
+
 
 const toLogin = () =>{
     router.push("/login")
@@ -15,6 +17,10 @@ const errorHandle = (status,info) =>{
             break;
         case 401:
             console.log("客户端试图对一个受保护的资源进行操作，却又没有提供正确的认证证书");
+            Vue.prototype.$notify.error({
+                title: '登录失败',
+                message: '检查一下用户名和密码吧w(ﾟДﾟ)w'
+              });
             toLogin();
             break;
         case 403:
@@ -26,6 +32,10 @@ const errorHandle = (status,info) =>{
             break;
         case 500:
             console.log("执行请求处理代码时遇到了异常，它们就发送此响应代码");
+            Vue.prototype.$notify.error({
+                title: 'Warning',
+                message: '服务器出现问题了w(ﾟДﾟ)w'
+              });
             break;
         case 503:
             console.log("最可能的原因是资源不足：服务器突然收到太多请求，以至于无法全部处理");

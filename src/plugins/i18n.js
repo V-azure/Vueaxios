@@ -9,17 +9,21 @@ Vue.use(VueI18n)
 const messages = {
     en: {
         message: {
+            homepage: "Home",
             project: "project",
             params: "params",
-            content: "content"
+            content: "content",
+            leavingmessage: "leavingmessage"
         },
         ...enLocale
     },
     zh: {
         message: {
+            homepage: "首页",
             project: "商品管理",
             params: "规格参数",
-            content: "广告分类管理"
+            content: "广告分类管理",
+            leavingmessage: "留言"
         },
         ...zhLocale
     }

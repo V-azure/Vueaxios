@@ -2,6 +2,7 @@ import jwtDecode from "jwt-decode"
 import local from "../../utils/lcoalUtils"
 import api from "../../api"
 import router from "../../router"
+import Vue from 'vue'
 
 export default {
     namespaced: true,
@@ -32,6 +33,11 @@ export default {
             })
                 .then((res) => {
                     if (res.status === 200) {
+                        Vue.prototype.$notify({
+                            title: '登录成功(๑•̀ㅂ•́)و✧',
+                            message: '欢迎来到主页~',
+                            type: 'success'
+                          });
                         const temp = {
                             username: jwtDecode(res.data).username,
                             isLogined: Boolean(jwtDecode(res.data).username),
